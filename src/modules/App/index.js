@@ -25,7 +25,7 @@ export class App extends Component {
   render() {
     const { prefixCls, children, ...props } = this.props;
     return (
-      <div className={`${prefixCls}`}>  
+      <div className={`${prefixCls}`}>
       </div>
     );
   }
