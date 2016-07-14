@@ -26,5 +26,5 @@ deploy:
       branch: master
     commands:
       - docker pull registry.aliyuncs.com/xueqingxiao/home
-      - docker run --rm --volumes-from=static registry.aliyuncs.com/xueqingxiao/home cp -rf home /data/home
+      - docker run --rm registry.aliyuncs.com/xueqingxiao/home cp -rf home /data/home
  
