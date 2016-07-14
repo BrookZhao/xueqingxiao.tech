@@ -13,7 +13,7 @@ publish:
     email: $$DOCKER_EMAIL
     registry: registry.aliyuncs.com
     repo: xueqingxiao/home
-    tag: home
+    tag: latest
     file: Dockerfile
     mirror: https://19tyykg1.mirror.aliyuncs.com
     when:
