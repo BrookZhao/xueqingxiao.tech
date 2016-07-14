@@ -25,7 +25,7 @@ deploy:
     when:
       branch: master
     commands:
-      - mkdir -p /data
+      - mkdir -p /data/home
       - docker pull registry.aliyuncs.com/xueqingxiao/home
       - docker run --rm registry.aliyuncs.com/xueqingxiao/home cp -rf home /data/home
  
