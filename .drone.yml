@@ -16,8 +16,10 @@ publish:
     tag: latest
     file: Dockerfile
     mirror: https://19tyykg1.mirror.aliyuncs.com
-    when:
-      branch: master
-      commands:
+deploy:
+  ssh:
+    host: 47.88.189.75
+    user: root
+    commands:
       - docker pull registry.aliyuncs.com/xueqingxiao/home
       - docker run --rm --volumes-from=webapps registry.aliyuncs.com/xueqingxiao/home cp -rf home /webapps
