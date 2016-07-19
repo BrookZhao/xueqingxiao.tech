@@ -20,4 +20,4 @@ publish:
       branch: master
       commands:
       - docker pull registry.aliyuncs.com/xueqingxiao/home
-      - docker run --rm --volumes-from=webapps registry.aliyuncs.com/xueqingxiao/home cp -rf home /webapps/home
+      - docker run --rm --volumes-from=webapps registry.aliyuncs.com/xueqingxiao/home cp -rf home /webapps
