@@ -14,7 +14,7 @@ export class App extends Component {
   };
 
   static defaultProps = {
-    prefixCls: 'home',
+    prefixCls: 'app-container',
   };
 
   constructor(props, context) {
