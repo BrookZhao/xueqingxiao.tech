@@ -1,6 +1,6 @@
-Home
-_______________________
-
+Shawn Sit's Home Page
+=====================
+[![Build Status](http://drone.xueqingxiao.tech/api/badges/xueqingxiao/xueqingxiao.tech/status.svg)](http://drone.xueqingxiao.tech/xueqingxiao/xueqingxiao.tech)
 
 ## Table of Contents
 
@@ -48,7 +48,7 @@ View -> Syntax -> Open all with current extension as ... -> Babel -> JavaScript(
 ```
 ## Installation
 ```shell
-$ git clone ssh://git@git.xiaolumm.com:10022/XLMM-FE/xlmm-console.git
+$ git clone https://github.com/xueqingxiao/xueqingxiao.tech.git
 $ cd xlmm-mall
 $ npm install babel-eslint -g
 $ npm install eslint -g

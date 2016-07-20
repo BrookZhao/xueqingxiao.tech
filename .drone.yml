@@ -11,15 +11,14 @@ publish:
     username: $$DOCKER_USERNAME
     password: $$DOCKER_PASSWORD
     email: $$DOCKER_EMAIL
-    registry: registry.aliyuncs.com
-    repo: xueqingxiao/home
+    repo: xueqingxiao/xueqingxiao.tech
     tag: latest
     file: Dockerfile
-    mirror: https://19tyykg1.mirror.aliyuncs.com
+    
 deploy:
   ssh:
     host: 47.88.189.75
     user: root
     commands:
-      - docker pull registry.aliyuncs.com/xueqingxiao/home
-      - docker run --rm --volumes-from=webapps registry.aliyuncs.com/xueqingxiao/home cp -rf home /webapps
+      - docker pull xueqingxiao/xueqingxiao.tech
+      - docker run --rm --volumes-from=webapps xueqingxiao/xueqingxiao.tech cp -rf home /webapps
