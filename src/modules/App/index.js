@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Header } from 'modules/Header';
 
 import './styles/index.less';
 
@@ -26,6 +27,7 @@ export class App extends Component {
     const { prefixCls, children, ...props } = this.props;
     return (
       <div className={`${prefixCls}`}>
+        <Header />
       </div>
     );
   }
