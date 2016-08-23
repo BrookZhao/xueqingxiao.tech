@@ -7,7 +7,6 @@ export class App extends Component {
   static propTypes = {
     prefixCls: React.PropTypes.string,
     children: React.PropTypes.any,
-    location: React.PropTypes.any,
   };
 
   static contextTypes = {
