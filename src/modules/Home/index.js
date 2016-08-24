@@ -25,7 +25,12 @@ export class Home extends Component {
     const { prefixCls, children, ...props } = this.props;
     return (
       <div className={`${prefixCls}`}>
-        <p>Shawn Sit</p>
+        <h1>Shawn Sit</h1>
+        <ul className="nav">
+          <li><a href="https://github.com/xueqingxiao">Github</a></li>
+          <li><a href="http://weibo.com/u/2643616294">Weibo</a></li>
+          <li><a href="https://twitter.com/xueqingxiao">Twitter</a></li>
+        </ul>
       </div>
     );
   }
