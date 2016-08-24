@@ -1,5 +1,4 @@
 @import "./theme.less";
-
 @font-face {
   font-family: 'Coming Soon';
   font-style: normal;
@@ -12,6 +11,26 @@
   font-family: 'Coming Soon', cursive;
 }
 
-.app-container {
-  background: #ececec;
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #fff;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #000;
+  opacity: 0.5;
+  padding: 0px 8px;
 }

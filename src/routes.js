@@ -1,9 +1,9 @@
 import React from 'react';
 import { IndexRoute, Route } from 'react-router';
-import { App } from 'modules/App';
+import { Home } from 'modules/Home';
 
 export default (
-  <Route path="/" component={App}>
-    <IndexRoute path="/" component={App} />
+  <Route path="/" component={Home}>
+    <IndexRoute path="/" component={Home} />
   </Route>
 );
