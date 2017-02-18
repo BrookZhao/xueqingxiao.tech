@@ -80,6 +80,3 @@ $ npm run build:production
 ```
 $ npm test
 ```
-
-## Compontent Doc
-- [See](http://ant.design/docs/react/introduce)
