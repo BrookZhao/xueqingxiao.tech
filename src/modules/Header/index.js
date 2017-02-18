@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Row, Col, Icon } from 'antd';
 import { Link } from 'react-router';
 
 import './index.less';

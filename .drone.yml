@@ -1,24 +1,25 @@
-build:
-  image: node
-  commands:
-    - npm install
-    - npm run build:production
-cache:
-  mount:
-    - node_modules
-publish:
-  docker:
-    username: $$DOCKER_USERNAME
-    password: $$DOCKER_PASSWORD
-    email: $$DOCKER_EMAIL
-    repo: xueqingxiao/xueqingxiao.tech
-    tag: latest
-    file: Dockerfile
-    
-deploy:
-  ssh:
-    host: xueqingxiao.tech
-    user: root
+pipeline:
+  build:
+    image: node
     commands:
-      - docker pull xueqingxiao/xueqingxiao.tech
-      - docker run --rm --volumes-from=webapps xueqingxiao/xueqingxiao.tech cp -rf home /webapps
+      - npm install
+      - npm run build:production
+  cache:
+    mount:
+      - node_modules
+  publish:
+    docker:
+      username: $$DOCKER_USERNAME
+      password: $$DOCKER_PASSWORD
+      email: $$DOCKER_EMAIL
+      repo: xueqingxiao/xueqingxiao.tech
+      tag: latest
+      file: Dockerfile
+      
+  deploy:
+    ssh:
+      host: xueqingxiao.tech
+      user: root
+      commands:
+        - docker pull xueqingxiao/xueqingxiao.tech
+        - docker run --rm --volumes-from=webapps xueqingxiao/xueqingxiao.tech cp -rf home /webapps
