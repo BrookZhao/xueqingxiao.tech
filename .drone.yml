@@ -2,24 +2,23 @@ pipeline:
   build:
     image: node
     commands:
-      - npm install
-      - npm run build:production
-  cache:
-    mount:
-      - node_modules
+      - npm install yarn -g
+      - yarn install
+      - yarn build:production
+
   publish:
-    docker:
-      username: $$DOCKER_USERNAME
-      password: $$DOCKER_PASSWORD
-      email: $$DOCKER_EMAIL
-      repo: xueqingxiao/xueqingxiao.tech
-      tag: latest
-      file: Dockerfile
+    image: plugins/docker
+    registry: registry.cn-hangzhou.aliyuncs.com
+    repo: registry.cn-hangzhou.aliyuncs.com/xueqingxiao/xueqingxiao.tech
+    username: ${REGISTRY_USERNAME}
+    password: ${REGISTRY_PASSWORD}
+    tags: latest
       
   deploy:
-    ssh:
-      host: xueqingxiao.tech
-      user: root
-      commands:
-        - docker pull xueqingxiao/xueqingxiao.tech
-        - docker run --rm --volumes-from=webapps xueqingxiao/xueqingxiao.tech cp -rf home /webapps
+    image: appleboy/drone-ssh
+    host: xueqingxiao.tech
+    user: ${SSH_USERNAME}
+    password: ${SSH_PASSWORD}
+    script:
+      - docker pull registry.cn-hangzhou.aliyuncs.com/xueqingxiao/xueqingxiao.tech:latest
+      - docker run --rm --volumes-from=nginx registry.cn-hangzhou.aliyuncs.com/xueqingxiao/xueqingxiao.tech:latest cp -rf home /webapps
