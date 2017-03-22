@@ -1,11 +1,14 @@
 import React from 'react';
-import Layout from 'components/Layout';
+import {
+  Layout,
+  Header,
+} from 'components';
 
 export default props => (
   <Layout>
     <Layout.Header>
       <Layout.Container>
-        Header
+        <Header/>
       </Layout.Container>
     </Layout.Header>
     <Layout.Content>
@@ -13,10 +16,8 @@ export default props => (
         {props.children}
       </Layout.Container>
     </Layout.Content>
-    <Layout.Footer>
-      <Layout.Container>
-        Footer
-      </Layout.Container>
-    </Layout.Footer>
+    <Layout.Container>
+      Footer
+    </Layout.Container>
   </Layout>
 );

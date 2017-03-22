@@ -1,5 +1,8 @@
 import React from 'react';
 
-export default Header = props =>(
-  
+export default props =>(
+  <div className="wt-header">
+    <span>$$</span>
+
+  </div>
 );
