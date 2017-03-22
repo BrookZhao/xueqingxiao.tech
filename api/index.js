@@ -1,10 +1,10 @@
 import Koa from 'koa';
 import graphqlHTTP from 'koa-graphql-next';
-import { getSchema } from '@risingstack/graffiti-mongoose';
 import graphql from 'graphql';
+import { getSchema } from '@risingstack/graffiti-mongoose';
 import models from './models';
 
-export const schema = getSchema(models);
+const schema = getSchema(models);
 
 const app = new Koa();
 app.use(graphqlHTTP({

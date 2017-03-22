@@ -10,25 +10,20 @@ const __DEV__ = (env === 'development');
 const __PROD__ = (env === 'production');
 
 const PATHS = {
-  console: path.join(__dirname, '../console'),
-  content: path.join(__dirname, '../content'),
-  components: path.join(__dirname, '../components'),
+  app: path.join(__dirname, '../app'),
   dist: path.join(__dirname, '../dist'),
   publicPath: './',
 }
 
 const webpackConfig = {
   entry: [
-    `${PATHS.console}/index`,
-    `${PATHS.content}/index`,
-    `${PATHS.components}/index`,
+    `${PATHS.app}/index`,
   ],
   module: {},
   resoleve: {
     alias: {
-      components: PATHS.components,
-      content: PATHS.content,
-      console: PATHS.console,
+      components: `${PATHS.app}/components`,
+      redux: `${PATHS.app}/redux`,
     }
   },
   // performance: {},
