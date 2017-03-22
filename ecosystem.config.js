@@ -14,6 +14,7 @@ module.exports = {
     name: 'XT-DEV',
     interpreter: 'babel-node',
     script: 'bin/devServer.js',
+    watch: ['bin', 'config'],
     env: {
       NODE_ENV: 'development',
     },

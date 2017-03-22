@@ -1,0 +1,32 @@
+@import "../themes/default";
+
+.wt-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &-title,
+  &-navgation {
+    display: flex;
+    flex: .5;
+    > a {
+      margin-right: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      color: @text-color-secondary-dark;
+      text-decoration: none;
+      &:hover,
+      :active {
+        color: @heading-color-dark;
+      }
+    }
+  }
+
+  &-title {
+    justify-content: flex-start;
+  }
+
+  &-navgation {
+    justify-content: flex-end;
+  }
+}
