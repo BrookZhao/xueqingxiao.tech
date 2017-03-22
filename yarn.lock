@@ -874,7 +874,19 @@ babel-register@^6.24.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@6.22.0, babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0:
+babel-relay-plugin-loader@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/babel-relay-plugin-loader/-/babel-relay-plugin-loader-0.10.0.tgz#1dff6f6d6355243fe23a2dec5483d4c45a111300"
+  dependencies:
+    babel-relay-plugin "^0.10.0"
+
+babel-relay-plugin@^0.10.0:
+  version "0.10.0"
+  resolved "http://10.40.189.154:7001/babel-relay-plugin/download/babel-relay-plugin-0.10.0.tgz#c7adede2b27dcc4aeedcb1ae760e364b2bacfaa0"
+  dependencies:
+    graphql "0.8.2"
+
+babel-runtime@6.22.0, babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.6.1:
   version "6.22.0"
   resolved "http://registry.npm.taobao.org/babel-runtime/download/babel-runtime-6.22.0.tgz#1cf8b4ac67c77a4ddb0db2ae1f74de52ac4ca611"
   dependencies:
@@ -1172,6 +1184,10 @@ clap@^1.0.9:
   resolved "http://registry.npm.taobao.org/clap/download/clap-1.1.3.tgz#b3bd36e93dd4cbfb395a3c26896352445265c05b"
   dependencies:
     chalk "^1.1.3"
+
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "http://10.40.189.154:7001/classnames/download/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
 clean-css@4.0.x:
   version "4.0.9"
@@ -1858,7 +1874,7 @@ faye-websocket@~0.11.0:
   dependencies:
     websocket-driver ">=0.5.1"
 
-fbjs@^0.8.1, fbjs@^0.8.4:
+fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.6:
   version "0.8.9"
   resolved "http://registry.npm.taobao.org/fbjs/download/fbjs-0.8.9.tgz#180247fbd347dcc9004517b904f865400a0c8f14"
   dependencies:
@@ -2064,6 +2080,12 @@ graphql-relay@0.5.1:
   version "0.5.1"
   resolved "http://registry.npm.taobao.org/graphql-relay/download/graphql-relay-0.5.1.tgz#3b3e44430a24c0f636e713f43f65bd542fe02ac9"
 
+graphql@0.8.2:
+  version "0.8.2"
+  resolved "http://10.40.189.154:7001/graphql/download/graphql-0.8.2.tgz#eb1bb524b38104bbf2c9157f9abc67db2feba7d2"
+  dependencies:
+    iterall "1.0.2"
+
 graphql@^0.9.1:
   version "0.9.1"
   resolved "http://registry.npm.taobao.org/graphql/download/graphql-0.9.1.tgz#f4d154cbec054d4a5d3b1be95f23435c09aa86c8"
@@ -2124,6 +2146,15 @@ he@1.1.x:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/he/download/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
+history@^3.0.0:
+  version "3.3.0"
+  resolved "http://10.40.189.154:7001/history/download/history-3.3.0.tgz#fcedcce8f12975371545d735461033579a6dae9c"
+  dependencies:
+    invariant "^2.2.1"
+    loose-envify "^1.2.0"
+    query-string "^4.2.2"
+    warning "^3.0.0"
+
 hmac-drbg@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/hmac-drbg/download/hmac-drbg-1.0.0.tgz#3db471f45aae4a994a0688322171f51b8b91bee5"
@@ -2135,6 +2166,10 @@ hmac-drbg@^1.0.0:
 hoek@2.x.x:
   version "2.16.3"
   resolved "http://registry.npm.taobao.org/hoek/download/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
+
+hoist-non-react-statics@^1.2.0:
+  version "1.2.0"
+  resolved "http://10.40.189.154:7001/hoist-non-react-statics/download/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
 
 home-or-tmp@^2.0.0:
   version "2.0.0"
@@ -2311,7 +2346,7 @@ interpret@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/interpret/download/interpret-1.0.1.tgz#d579fb7f693b858004947af39fa0db49f795602c"
 
-invariant@^2.2.0:
+invariant@^2.2.0, invariant@^2.2.1:
   version "2.2.2"
   resolved "http://registry.npm.taobao.org/invariant/download/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
   dependencies:
@@ -2469,6 +2504,10 @@ isomorphic-fetch@^2.1.1:
 isstream@~0.1.2:
   version "0.1.2"
   resolved "http://registry.npm.taobao.org/isstream/download/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
+
+iterall@1.0.2:
+  version "1.0.2"
+  resolved "http://10.40.189.154:7001/iterall/download/iterall-1.0.2.tgz#41a2e96ce9eda5e61c767ee5dc312373bb046e91"
 
 iterall@1.0.3:
   version "1.0.3"
@@ -2709,7 +2748,7 @@ lodash.uniq@^4.3.0:
   version "4.5.0"
   resolved "http://registry.npm.taobao.org/lodash.uniq/download/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.17.4, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.2.0, lodash@^4.5.1:
+lodash@4.17.4, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.2.0, lodash@^4.5.1:
   version "4.17.4"
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -2717,7 +2756,7 @@ longest@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/longest/download/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
 
-loose-envify@^1.0.0, loose-envify@^1.1.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0:
   version "1.3.1"
   resolved "http://registry.npm.taobao.org/loose-envify/download/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
   dependencies:
@@ -2999,6 +3038,10 @@ normalize-url@^1.4.0:
     prepend-http "^1.0.0"
     query-string "^4.1.0"
     sort-keys "^1.0.0"
+
+normalize.css@^5.0.0:
+  version "5.0.0"
+  resolved "http://10.40.189.154:7001/normalize.css/download/normalize.css-5.0.0.tgz#7cec875ce8178a5333c4de80b68ea9c18b9d7c37"
 
 npmlog@^4.0.1:
   version "4.0.2"
@@ -3604,7 +3647,7 @@ qs@6.4.0, qs@~6.4.0:
   version "6.4.0"
   resolved "http://registry.npm.taobao.org/qs/download/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
 
-query-string@^4.1.0:
+query-string@^4.1.0, query-string@^4.2.2:
   version "4.3.2"
   resolved "http://registry.npm.taobao.org/query-string/download/query-string-4.3.2.tgz#ec0fd765f58a50031a3968c2431386f8947a5cdd"
   dependencies:
@@ -3662,6 +3705,43 @@ react-dom@^15.4.2:
     fbjs "^0.8.1"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
+
+react-relay@^0.10.0:
+  version "0.10.0"
+  resolved "http://10.40.189.154:7001/react-relay/download/react-relay-0.10.0.tgz#4b19c4450e0140b9f04fd6fe96d8f451f0804078"
+  dependencies:
+    babel-runtime "^6.6.1"
+    fbjs "^0.8.1"
+    react-static-container "^1.0.1"
+
+react-router-relay@^0.13.5:
+  version "0.13.5"
+  resolved "http://10.40.189.154:7001/react-router-relay/download/react-router-relay-0.13.5.tgz#1222ff065029b6497f5b452dab12cdaf618e6945"
+  dependencies:
+    babel-runtime "^6.11.6"
+    invariant "^2.2.1"
+    lodash "^4.15.0"
+    react-static-container "^1.0.1"
+
+react-router@3.0.2:
+  version "3.0.2"
+  resolved "http://10.40.189.154:7001/react-router/download/react-router-3.0.2.tgz#5a19156678810e01d81901f9c0fef63284b8a514"
+  dependencies:
+    history "^3.0.0"
+    hoist-non-react-statics "^1.2.0"
+    invariant "^2.2.1"
+    loose-envify "^1.2.0"
+    warning "^3.0.0"
+
+react-static-container@^1.0.1:
+  version "1.0.1"
+  resolved "http://10.40.189.154:7001/react-static-container/download/react-static-container-1.0.1.tgz#694c0dd68a896b879519afb548399cc1989c9ab0"
+
+react-tap-event-plugin@^2.0.1:
+  version "2.0.1"
+  resolved "http://10.40.189.154:7001/react-tap-event-plugin/download/react-tap-event-plugin-2.0.1.tgz#316beb3bc6556e29ec869a7293e89c826a9074d2"
+  dependencies:
+    fbjs "^0.8.6"
 
 react@^15.4.2:
   version "15.4.2"
@@ -4045,6 +4125,10 @@ source-list-map@^0.1.7, source-list-map@~0.1.7:
   version "0.1.8"
   resolved "http://registry.npm.taobao.org/source-list-map/download/source-list-map-0.1.8.tgz#c550b2ab5427f6b3f21f5afead88c4f5587b2106"
 
+source-list-map@^1.0.1:
+  version "1.0.1"
+  resolved "http://10.40.189.154:7001/source-list-map/download/source-list-map-1.0.1.tgz#cc1fc17122ae0a51978024c2cc0f8c35659026b8"
+
 source-map-support@^0.4.2, source-map-support@^0.4.6:
   version "0.4.14"
   resolved "http://registry.npm.taobao.org/source-map-support/download/source-map-support-0.4.14.tgz#9d4463772598b86271b4f523f6c1f4e02a7d6aef"
@@ -4275,7 +4359,7 @@ ua-parser-js@^0.7.9:
   version "0.7.12"
   resolved "http://registry.npm.taobao.org/ua-parser-js/download/ua-parser-js-0.7.12.tgz#04c81a99bdd5dc52263ea29d24c6bf8d4818a4bb"
 
-uglify-js@2.8.x, uglify-js@^2.7.5:
+uglify-js@2.8.x, uglify-js@^2.8.5:
   version "2.8.13"
   resolved "http://registry.npm.taobao.org/uglify-js/download/uglify-js-2.8.13.tgz#d0cdf02f3c661484fac601b7e723207b735a374c"
   dependencies:
@@ -4424,9 +4508,15 @@ vxx@^1.0.3:
     shimmer "^1.0.0"
     uuid "^2.0.1"
 
-watchpack@^1.2.0:
+warning@^3.0.0:
+  version "3.0.0"
+  resolved "http://10.40.189.154:7001/warning/download/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
+  dependencies:
+    loose-envify "^1.0.0"
+
+watchpack@^1.3.1:
   version "1.3.1"
-  resolved "http://registry.npm.taobao.org/watchpack/download/watchpack-1.3.1.tgz#7d8693907b28ce6013e7f3610aa2a1acf07dad87"
+  resolved "http://10.40.189.154:7001/watchpack/download/watchpack-1.3.1.tgz#7d8693907b28ce6013e7f3610aa2a1acf07dad87"
   dependencies:
     async "^2.1.2"
     chokidar "^1.4.3"
@@ -4469,16 +4559,23 @@ webpack-dev-server@^2.4.2:
     webpack-dev-middleware "^1.9.0"
     yargs "^6.0.0"
 
-webpack-sources@^0.1.0, webpack-sources@^0.1.4:
+webpack-sources@^0.1.0:
   version "0.1.5"
   resolved "http://registry.npm.taobao.org/webpack-sources/download/webpack-sources-0.1.5.tgz#aa1f3abf0f0d74db7111c40e500b84f966640750"
   dependencies:
     source-list-map "~0.1.7"
     source-map "~0.5.3"
 
-webpack@^2.2.1:
-  version "2.2.1"
-  resolved "http://registry.npm.taobao.org/webpack/download/webpack-2.2.1.tgz#7bb1d72ae2087dd1a4af526afec15eed17dda475"
+webpack-sources@^0.2.0:
+  version "0.2.0"
+  resolved "http://10.40.189.154:7001/webpack-sources/download/webpack-sources-0.2.0.tgz#fea93ba840f16cdd3f246f0ee95f88a9492c69fb"
+  dependencies:
+    source-list-map "^1.0.1"
+    source-map "~0.5.3"
+
+webpack@2.3.0:
+  version "2.3.0"
+  resolved "http://10.40.189.154:7001/webpack/download/webpack-2.3.0.tgz#0ae2d90350a7d48a44fddd7dd85c855642bc042e"
   dependencies:
     acorn "^4.0.4"
     acorn-dynamic-import "^2.0.0"
@@ -4496,9 +4593,9 @@ webpack@^2.2.1:
     source-map "^0.5.3"
     supports-color "^3.1.0"
     tapable "~0.2.5"
-    uglify-js "^2.7.5"
-    watchpack "^1.2.0"
-    webpack-sources "^0.1.4"
+    uglify-js "^2.8.5"
+    watchpack "^1.3.1"
+    webpack-sources "^0.2.0"
     yargs "^6.0.0"
 
 websocket-driver@>=0.5.1:

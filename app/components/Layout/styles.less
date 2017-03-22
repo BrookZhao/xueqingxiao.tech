@@ -1,0 +1,36 @@
+@import '../themes/default';
+
+.xt-layout {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  overflow: auto;
+  background: @layout-body-background;
+
+  &-header,
+  &-footer {
+    flex: 0 0 auto;
+  }
+  
+  &-header {
+    background: @layout-header-background;
+    padding: @layout-header-padding;
+    height: @layout-header-height;
+    line-height: @layout-header-height;
+  }
+  
+  &-footer {
+    padding: @layout-footer-padding;
+    color: @text-color;
+    font-size: @font-size-base;
+  }
+  
+  &-content {
+    flex: auto;
+  }
+
+  &-container {
+    width: 980px;
+    margin: 0 auto;
+  }
+}

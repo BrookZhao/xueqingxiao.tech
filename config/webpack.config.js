@@ -1,11 +1,11 @@
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import WriteFilePlugin from 'write-file-webpack-plugin';
-import ExtractTextPlugin from "extract-text-webpack-plugin";
-import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const env = process.env.NODE_ENV;
+const env = process.env.NODE_ENV || 'development';
 const __DEV__ = (env === 'development');
 const __PROD__ = (env === 'production');
 
@@ -20,10 +20,10 @@ const webpackConfig = {
     `${PATHS.app}/index`,
   ],
   module: {},
-  resoleve: {
+  resolve: {
     alias: {
       components: `${PATHS.app}/components`,
-      redux: `${PATHS.app}/redux`,
+      containers: `${PATHS.app}/containers`,
     }
   },
   // performance: {},
@@ -31,7 +31,7 @@ const webpackConfig = {
 };
 if (__DEV__) {
   webpackConfig.entry.push(
-    'webpack-dev-server/client?http://localhost:3000',
+    'webpack-dev-server/client?http://localhost:7070',
     'webpack/hot/only-dev-server',
   );
   webpackConfig.devtool = 'inline-source-map';
@@ -47,6 +47,9 @@ webpackConfig.module.rules = [{
   test: /\.js$/,
   exclude: /(node_modules|bower_components)/,
   use: 'babel-loader',
+}, {
+  test: /\.css$/,
+  use: ['style-loader', 'css-loader']
 }];
 
 if (__DEV__) {
@@ -68,7 +71,7 @@ if (__PROD__) {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    template: 'src/assets/template.html',
+    template: `${PATHS.app}/assets/template.html`,
     inject: 'body',
   }),
 ];
@@ -101,4 +104,4 @@ if (__PROD__) {
   );
 }
 
-export default webpackConfig;
+module.exports = webpackConfig;
