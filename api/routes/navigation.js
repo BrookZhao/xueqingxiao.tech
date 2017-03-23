@@ -7,6 +7,6 @@ router
   .get('/navigations/:id', navigation.getOne)
   .post('/navigations', navigation.add)
   .put('/navigations', navigation.update)
-  .delete('/navigations', navigation.delete);
+  .delete('/navigations', navigation.remove);
 
-export default router;
+module.exports = router;

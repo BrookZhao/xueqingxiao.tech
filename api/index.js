@@ -1,9 +1,12 @@
 const Koa = require('koa');
 const logger = require('koa-logger');
 const database = require('./database');
+const router = require('./routes');
 
 const app = new Koa();
 app.use(logger());
+app.use(router.routes());
+app.use(router.allowedMethods());
 
 const start = async() => {
   try {
