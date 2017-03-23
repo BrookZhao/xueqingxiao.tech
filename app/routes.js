@@ -14,7 +14,7 @@ const ViewerQueries = {
  * Please keep routes in alphabetical order
  */
 export default (
-  <Route path="/">
+  <Route path="/" component={App} queries={ViewerQueries}>
     <IndexRoute component={Home} queries={ViewerQueries}/>
   </Route>
 );

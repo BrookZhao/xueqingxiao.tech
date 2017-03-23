@@ -19,21 +19,9 @@ class Home extends Component {
   render() {
     const { navigations } = this.props.viewer;
     return (
-      <Layout>
-        <Layout.Header>
-          <Layout.Container>
-            <Header navigations={navigations}/>
-          </Layout.Container>
-        </Layout.Header>
-        <Layout.Content>
-          <Layout.Container>
-            
-          </Layout.Container>
-        </Layout.Content>
-        <Layout.Container>
-          Footer
-        </Layout.Container>
-      </Layout>
+      <Layout.Container>
+        content
+      </Layout.Container>
     );
   }
 
@@ -43,12 +31,15 @@ Home = Relay.createContainer(Home, {
   fragments: {
     viewer: () => Relay.QL `
       fragment on Viewer {
-        navigations(last: 10, orderBy: NAME_DESC) {
+        articles(last: 10, orderBy: UPDATED_ASC) {
           edges {
             node {
               id
-              name
-              link
+              title
+              author
+              content
+              likes
+              uv          
             }
           }
         }
