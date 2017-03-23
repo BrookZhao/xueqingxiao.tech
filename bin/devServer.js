@@ -1,11 +1,11 @@
-import WebpackDevServer from 'webpack-dev-server';
-import webpack from 'webpack';
-import webpackConfig from '../config/webpack.config';
+const WebpackDevServer = require('webpack-dev-server');
+const webpack = require('webpack');
+const webpackConfig = require('../config/webpack.config');
 
 const devServer = new WebpackDevServer(webpack(webpackConfig), {
   contentBase: '/dist',
   proxy: {
-    '/graphql': 'http://localhost:3000',
+    '/api': 'http://localhost:3000',
   },
   stats: {
     colors: true

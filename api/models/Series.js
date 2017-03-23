@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const SeriesSchema = mongoose.Schema({
   name: String,
@@ -10,4 +10,4 @@ const SeriesSchema = mongoose.Schema({
   }],
 });
 
-export default mongoose.model('Series', SeriesSchema);
+module.exports = mongoose.model('Series', SeriesSchema);

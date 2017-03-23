@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const NavigationSchema = mongoose.Schema({
   name: String,
   link: String,
 });
 
-export default mongoose.model('Navigation', NavigationSchema);
+module.exports = mongoose.model('Navigation', NavigationSchema);

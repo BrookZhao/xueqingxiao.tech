@@ -1,21 +1,21 @@
-import Koa from 'koa';
-import logger from 'koa-logger';
-import graphqlHTTP from 'koa-graphql-next';
-import { graphql } from 'graphql';
-import { getSchema } from '@risingstack/graffiti-mongoose';
-import mongoose from 'mongoose';
-import models from './models';
-
-export const schema = getSchema(models);
+const Koa = require('koa');
+const logger = require('koa-logger');
+const database = require('./database');
 
 const app = new Koa();
 app.use(logger());
-app.use(graphqlHTTP({
-  schema: schema,
-  graphiql: true
-}));
 
-mongoose.connect('mongodb://localhost/blog');
-app.listen(3000, () => {
+const start = async() => {
+  try {
+    const blogDatabase = await database.connect('mongodb://localhost/blog');
+    console.log(`Connected to ${blogDatabase.host}:${blogDatabase.port}/${blogDatabase.name}`);
+  } catch (error) {
+    console.error('Unable to connect to database', error);
+  }
+  await app.listen(3000);
   console.log('API Server is running on http://localhost:3000');
-});
+};
+
+module.exports = {
+  start,
+};

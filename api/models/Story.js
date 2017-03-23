@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const ArticleSchema = mongoose.Schema({
   title: String,
@@ -23,6 +23,10 @@ const ArticleSchema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  published: {
+    type: Boolean,
+    default: false,
+  }
 });
 
-export default mongoose.model('Article', ArticleSchema);
+module.exports = mongoose.model('Story', ArticleSchema);
