@@ -21,9 +21,9 @@ const update = async (ctx, next) => {
 };
 
 const getOne = async (ctx, next) => {
-  ctx.checkBody('id').notEmpty();
-  ctx.checkBody('name').optional().notEmpty();
-  ctx.checkBody('link').optional().notEmpty();
+  ctx.checkQuery('id').notEmpty();
+  ctx.checkQuery('name').optional().notEmpty();
+  ctx.checkQuery('link').optional().notEmpty();
   const navigation = await Navigation.findOne({});
   ctx.body = {
     navigation,
