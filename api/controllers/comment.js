@@ -1,4 +1,3 @@
-const boom = require('boom');
 const Comment = require('../models/Comment');
 
 const add = async (ctx, next) => {

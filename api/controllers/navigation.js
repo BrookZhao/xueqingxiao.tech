@@ -1,26 +1,26 @@
 const Navigation = require('../models/Navigation');
 
-const add = async(ctx, next) => {
+const add = async (ctx, next) => {
   ctx.checkBody('name').notEmpty();
   ctx.checkBody('link').notEmpty();
   await next();
 };
 
-const remove = async(ctx, next) => {
+const remove = async (ctx, next) => {
   ctx.checkBody('id').notEmpty();
   ctx.checkBody('name').optional().notEmpty();
   ctx.checkBody('link').optional().notEmpty();
   await next();
 };
 
-const update = async(ctx, next) => {
+const update = async (ctx, next) => {
   ctx.checkBody('id').notEmpty();
   ctx.checkBody('name').optional().notEmpty();
   ctx.checkBody('link').optional().notEmpty();
   await next();
 };
 
-const getOne = async(ctx, next) => {
+const getOne = async (ctx, next) => {
   ctx.checkBody('id').notEmpty();
   ctx.checkBody('name').optional().notEmpty();
   ctx.checkBody('link').optional().notEmpty();
@@ -31,7 +31,7 @@ const getOne = async(ctx, next) => {
   await next();
 };
 
-const getAll = async(ctx, next) => {
+const getAll = async (ctx, next) => {
   const navigations = await Navigation.find({});
   ctx.body = {
     navigations
