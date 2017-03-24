@@ -31,7 +31,7 @@ const getOne = async (ctx, next) => {
 const getAll = async (ctx, next) => {
   ctx.checkParams('story').notEmpty();
   await next();
-}
+};
 
 module.exports = {
   add,

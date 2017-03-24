@@ -37,7 +37,7 @@ const getAll = async (ctx, next) => {
     navigations
   };
   await next();
-}
+};
 
 module.exports = {
   add,
