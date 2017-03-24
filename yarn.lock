@@ -163,15 +163,9 @@ async@1.5, async@^1.5, async@^1.5.2:
   version "1.5.2"
   resolved "http://registry.npm.taobao.org/async/download/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@2.1.4:
+async@2.1.4, async@^2.1.2:
   version "2.1.4"
   resolved "http://registry.npm.taobao.org/async/download/async-2.1.4.tgz#2d2160c7788032e4dd6cbe2502f1f9a2c8f6cde4"
-  dependencies:
-    lodash "^4.14.0"
-
-async@^2.1.2:
-  version "2.1.5"
-  resolved "http://registry.npm.taobao.org/async/download/async-2.1.5.tgz#e587c68580994ac67fc56ff86d3ac56bdbe810bc"
   dependencies:
     lodash "^4.14.0"
 
@@ -1097,6 +1091,10 @@ bytes@2.3.0:
   version "2.3.0"
   resolved "http://registry.npm.taobao.org/bytes/download/bytes-2.3.0.tgz#d5b680a165b6201739acb611542aabc2d8ceb070"
 
+bytes@2.4.0:
+  version "2.4.0"
+  resolved "http://10.40.189.154:7001/bytes/download/bytes-2.4.0.tgz#7d97196f9d5baf7f6935e25985549edd2a6c2339"
+
 camel-case@3.0.x:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/camel-case/download/camel-case-3.0.0.tgz#ca3c3688a4e9cf3a4cda777dc4dcbc713249cf73"
@@ -1222,6 +1220,15 @@ clone-deep@^0.2.4:
 clone@^1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/clone/download/clone-1.0.2.tgz#260b7a99ebb1edfe247538175f783243cb19d149"
+
+co-body@^5.1.0:
+  version "5.1.0"
+  resolved "http://10.40.189.154:7001/co-body/download/co-body-5.1.0.tgz#e0e18561e99cdc8cb98ab8cce6ef7e5046f076ca"
+  dependencies:
+    inflation "^2.0.0"
+    qs "^6.4.0"
+    raw-body "^2.2.0"
+    type-is "^1.6.14"
 
 co@^4.6.0:
   version "4.6.0"
@@ -1365,6 +1372,10 @@ cookies@~0.7.0:
   dependencies:
     depd "~1.1.0"
     keygrip "~1.0.1"
+
+copy-to@^2.0.1:
+  version "2.0.1"
+  resolved "http://10.40.189.154:7001/copy-to/download/copy-to-2.0.1.tgz#2680fbb8068a48d08656b6098092bdafc906f4a5"
 
 core-js@^1.0.0:
   version "1.2.7"
@@ -2283,7 +2294,7 @@ humanize-number@0.0.2:
   version "0.0.2"
   resolved "http://registry.npm.taobao.org/humanize-number/download/humanize-number-0.0.2.tgz#11c0af6a471643633588588048f1799541489c18"
 
-iconv-lite@~0.4.13:
+iconv-lite@0.4.15, iconv-lite@~0.4.13:
   version "0.4.15"
   resolved "http://registry.npm.taobao.org/iconv-lite/download/iconv-lite-0.4.15.tgz#fe265a218ac6a57cfe854927e9d04c19825eddeb"
 
@@ -2312,6 +2323,10 @@ indexes-of@^1.0.1:
 indexof@0.0.1:
   version "0.0.1"
   resolved "http://registry.npm.taobao.org/indexof/download/indexof-0.0.1.tgz#82dc336d232b9062179d05ab3293a66059fd435d"
+
+inflation@^2.0.0:
+  version "2.0.0"
+  resolved "http://10.40.189.154:7001/inflation/download/inflation-2.0.0.tgz#8b417e47c28f925a45133d914ca1fd389107f30f"
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -2532,6 +2547,16 @@ json-loader@^0.5.4:
   version "0.5.4"
   resolved "http://registry.npm.taobao.org/json-loader/download/json-loader-0.5.4.tgz#8baa1365a632f58a3c46d20175fc6002c96e37de"
 
+json-path@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/json-path/-/json-path-0.1.3.tgz#dce61357b3b281b28ac647ec0a709bc58a155bf8"
+  dependencies:
+    json-ptr "~0.1.1"
+
+json-ptr@~0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/json-ptr/-/json-ptr-0.1.1.tgz#bab82a31e292ce7af9e3fc7fd65acd1bbb9248e8"
+
 json-schema@0.2.3:
   version "0.2.3"
   resolved "http://registry.npm.taobao.org/json-schema/download/json-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13"
@@ -2587,6 +2612,13 @@ kind-of@^3.0.2:
   dependencies:
     is-buffer "^1.0.2"
 
+koa-bodyparser@^4.2.0:
+  version "4.2.0"
+  resolved "http://10.40.189.154:7001/koa-bodyparser/download/koa-bodyparser-4.2.0.tgz#bce6e08bc65f8709b6d1faa9411c7f0d8938aa54"
+  dependencies:
+    co-body "^5.1.0"
+    copy-to "^2.0.1"
+
 koa-compose@^3.0.0, koa-compose@^3.2.1:
   version "3.2.1"
   resolved "http://registry.npm.taobao.org/koa-compose/download/koa-compose-3.2.1.tgz#a85ccb40b7d986d8e5a345b3a1ace8eabcf54de7"
@@ -2622,6 +2654,13 @@ koa-router@next:
     koa-compose "^3.0.0"
     methods "^1.0.1"
     path-to-regexp "^1.1.1"
+
+koa-validate@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/koa-validate/-/koa-validate-1.0.7.tgz#0b7dd3feee83cae1b4694fa06376477d945eb430"
+  dependencies:
+    json-path "^0.1.3"
+    validator "^5.2.0"
 
 koa@^2.2.0:
   version "2.2.0"
@@ -3654,7 +3693,7 @@ q@^1.1.2:
   version "1.5.0"
   resolved "http://registry.npm.taobao.org/q/download/q-1.5.0.tgz#dd01bac9d06d30e6f219aecb8253ee9ebdc308f1"
 
-qs@6.4.0, qs@~6.4.0:
+qs@6.4.0, qs@^6.4.0, qs@~6.4.0:
   version "6.4.0"
   resolved "http://registry.npm.taobao.org/qs/download/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
 
@@ -3691,6 +3730,14 @@ randombytes@^2.0.0, randombytes@^2.0.1:
 range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/range-parser/download/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
+
+raw-body@^2.2.0:
+  version "2.2.0"
+  resolved "http://10.40.189.154:7001/raw-body/download/raw-body-2.2.0.tgz#994976cf6a5096a41162840492f0bdc5d6e7fb96"
+  dependencies:
+    bytes "2.4.0"
+    iconv-lite "0.4.15"
+    unpipe "1.0.0"
 
 rc@^1.1.7:
   version "1.1.7"
@@ -3757,21 +3804,9 @@ readable-stream@1.0:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@2.1.5:
+readable-stream@2.1.5, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.1.0, readable-stream@^2.1.4:
   version "2.1.5"
   resolved "http://registry.npm.taobao.org/readable-stream/download/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
-  dependencies:
-    buffer-shims "^1.0.0"
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "~1.0.0"
-    process-nextick-args "~1.0.6"
-    string_decoder "~0.10.x"
-    util-deprecate "~1.0.1"
-
-"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.1.0, readable-stream@^2.1.4:
-  version "2.2.6"
-  resolved "http://registry.npm.taobao.org/readable-stream/download/readable-stream-2.2.6.tgz#8b43aed76e71483938d12a8d46c6cf1a00b1f816"
   dependencies:
     buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
@@ -4346,7 +4381,7 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "http://registry.npm.taobao.org/tweetnacl/download/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
-type-is@^1.5.5, type-is@~1.6.14:
+type-is@^1.5.5, type-is@^1.6.14, type-is@~1.6.14:
   version "1.6.14"
   resolved "http://registry.npm.taobao.org/type-is/download/type-is-1.6.14.tgz#e219639c17ded1ca0789092dd54a03826b817cb2"
   dependencies:
@@ -4392,7 +4427,7 @@ uniqs@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/uniqs/download/uniqs-2.0.0.tgz#ffede4b36b25290696e6e165d4a59edb998e6b02"
 
-unpipe@~1.0.0:
+unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/unpipe/download/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
 
@@ -4467,6 +4502,10 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
+
+validator@^5.2.0:
+  version "5.7.0"
+  resolved "http://10.40.189.154:7001/validator/download/validator-5.7.0.tgz#7a87a58146b695ac486071141c0c49d67da05e5c"
 
 vary@^1.0.0, vary@~1.1.0:
   version "1.1.1"

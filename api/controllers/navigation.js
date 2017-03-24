@@ -1,35 +1,42 @@
-const boom = require('boom');
 const Navigation = require('../models/Navigation');
 
-const add = async (ctx, next) => {
-  try {
-
-  } catch (e) {
-    console.error(e);
-    ctx.throw(boom.badRequest(ctx.translate('INVALID_NAVIGATION')));
-  }
+const add = async(ctx, next) => {
+  ctx.checkBody('name').notEmpty();
+  ctx.checkBody('link').notEmpty();
+  await next();
 };
 
-const remove = async (ctx, next) => {
-  
+const remove = async(ctx, next) => {
+  ctx.checkBody('id').notEmpty();
+  ctx.checkBody('name').optional().notEmpty();
+  ctx.checkBody('link').optional().notEmpty();
+  await next();
 };
 
-const update = async (ctx, next) => {
-  
+const update = async(ctx, next) => {
+  ctx.checkBody('id').notEmpty();
+  ctx.checkBody('name').optional().notEmpty();
+  ctx.checkBody('link').optional().notEmpty();
+  await next();
 };
 
-const getOne = async (ctx, next) => {
+const getOne = async(ctx, next) => {
+  ctx.checkBody('id').notEmpty();
+  ctx.checkBody('name').optional().notEmpty();
+  ctx.checkBody('link').optional().notEmpty();
   const navigation = await Navigation.findOne({});
   ctx.body = {
     navigation,
   };
+  await next();
 };
 
-const getAll = async (ctx, next) => {
+const getAll = async(ctx, next) => {
   const navigations = await Navigation.find({});
   ctx.body = {
     navigations
   };
+  await next();
 }
 
 module.exports = {
