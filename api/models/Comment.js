@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const schemaConfig = require('./schemaConfig');
 
 const CommentSchema = mongoose.Schema({
   content: {
@@ -19,6 +20,6 @@ const CommentSchema = mongoose.Schema({
     ref: 'User',
     required: true
   }
-});
+}, schemaConfig);
 
 module.exports = mongoose.model('Comment', CommentSchema);

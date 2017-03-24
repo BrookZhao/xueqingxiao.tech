@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const schemaConfig = require('./schemaConfig');
 
 const UserSchema = mongoose.Schema({
   avatarUrl: String,
@@ -10,6 +11,6 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-});
+}, schemaConfig);
 
 module.exports = mongoose.model('User', UserSchema);

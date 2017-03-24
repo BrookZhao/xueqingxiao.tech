@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const schemaConfig = require('./schemaConfig');
 
 const ArticleSchema = mongoose.Schema({
   title: {
@@ -33,6 +34,6 @@ const ArticleSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-});
+}, schemaConfig);
 
 module.exports = mongoose.model('Story', ArticleSchema);

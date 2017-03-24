@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const schemaConfig = require('./schemaConfig');
 
 const SeriesSchema = mongoose.Schema({
   name: {
@@ -17,6 +18,6 @@ const SeriesSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Article',
   }],
-});
+}, schemaConfig);
 
 module.exports = mongoose.model('Series', SeriesSchema);
