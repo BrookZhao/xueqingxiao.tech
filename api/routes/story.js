@@ -7,6 +7,9 @@ router
   .get('/series/:series/stories/:id', story.getOne)
   .post('/series/:series/stories', story.add)
   .put('/series/:series/stories', story.update)
-  .delete('/series/:series/stories', story.remove);
+  .delete('/series/:series/stories', story.remove)
+  .post('/series/:series/stories/:id/like', story.like)
+  .post('/series/:series/stories/:id/dislike', story.dislike)
+  .post('/series/:series/stories/:id/uv', story.visit);
 
 module.exports = router;

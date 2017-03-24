@@ -38,10 +38,31 @@ const getAll = async (ctx, next) => {
   await next();
 };
 
+const like = async (ctx, next) => {
+  ctx.checkParams('series').notEmpty();
+  ctx.checkParams('id').notEmpty();
+  await next();
+};
+
+const dislike = async (ctx, next) => {
+  ctx.checkParams('series').notEmpty();
+  ctx.checkParams('id').notEmpty();
+  await next();
+};
+
+const visit = async (ctx, next) => {
+  ctx.checkParams('series').notEmpty();
+  ctx.checkParams('id').notEmpty();
+  await next();
+};
+
 module.exports = {
   add,
   remove,
   update,
   getOne,
   getAll,
+  like,
+  dislike,
+  visit,
 };

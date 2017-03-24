@@ -10,7 +10,7 @@ const ArticleSchema = mongoose.Schema({
     default: 'Shawn Sit'
   },
   content: {
-    type: String
+    type: String,
     required: true
   },
   tags: [{
