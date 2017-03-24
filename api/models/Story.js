@@ -1,12 +1,18 @@
 const mongoose = require('mongoose');
 
 const ArticleSchema = mongoose.Schema({
-  title: String,
+  title: {
+    type: String,
+    required: true
+  },
   author: {
     type: String,
     default: 'Shawn Sit'
   },
-  content: Buffer,
+  content: {
+    type: String
+    required: true
+  },
   tags: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Tag',
@@ -26,7 +32,7 @@ const ArticleSchema = mongoose.Schema({
   published: {
     type: Boolean,
     default: false,
-  }
+  },
 });
 
 module.exports = mongoose.model('Story', ArticleSchema);
