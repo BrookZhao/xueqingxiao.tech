@@ -19,7 +19,7 @@ const getOne = async (ctx, next) => {
 
 const getAll = async (ctx, next) => {
   
-}
+};
 
 module.exports = {
   add,
