@@ -163,9 +163,15 @@ async@1.5, async@^1.5, async@^1.5.2:
   version "1.5.2"
   resolved "http://registry.npm.taobao.org/async/download/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@2.1.4, async@^2.1.2:
+async@2.1.4:
   version "2.1.4"
   resolved "http://registry.npm.taobao.org/async/download/async-2.1.4.tgz#2d2160c7788032e4dd6cbe2502f1f9a2c8f6cde4"
+  dependencies:
+    lodash "^4.14.0"
+
+async@^2.1.2:
+  version "2.1.5"
+  resolved "http://registry.npm.taobao.org/async/download/async-2.1.5.tgz#e587c68580994ac67fc56ff86d3ac56bdbe810bc"
   dependencies:
     lodash "^4.14.0"
 
@@ -1093,7 +1099,7 @@ bytes@2.3.0:
 
 bytes@2.4.0:
   version "2.4.0"
-  resolved "http://10.40.189.154:7001/bytes/download/bytes-2.4.0.tgz#7d97196f9d5baf7f6935e25985549edd2a6c2339"
+  resolved "http://registry.npm.taobao.org/bytes/download/bytes-2.4.0.tgz#7d97196f9d5baf7f6935e25985549edd2a6c2339"
 
 camel-case@3.0.x:
   version "3.0.0"
@@ -1222,8 +1228,8 @@ clone@^1.0.2:
   resolved "http://registry.npm.taobao.org/clone/download/clone-1.0.2.tgz#260b7a99ebb1edfe247538175f783243cb19d149"
 
 co-body@^5.1.0:
-  version "5.1.0"
-  resolved "http://10.40.189.154:7001/co-body/download/co-body-5.1.0.tgz#e0e18561e99cdc8cb98ab8cce6ef7e5046f076ca"
+  version "5.1.1"
+  resolved "http://registry.npm.taobao.org/co-body/download/co-body-5.1.1.tgz#d97781d1e3344ba4a820fd1806bddf8341505236"
   dependencies:
     inflation "^2.0.0"
     qs "^6.4.0"
@@ -1301,10 +1307,10 @@ commondir@^1.0.1:
   resolved "http://registry.npm.taobao.org/commondir/download/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
 
 compressible@~2.0.8:
-  version "2.0.9"
-  resolved "http://registry.npm.taobao.org/compressible/download/compressible-2.0.9.tgz#6daab4e2b599c2770dd9e21e7a891b1c5a755425"
+  version "2.0.10"
+  resolved "http://registry.npm.taobao.org/compressible/download/compressible-2.0.10.tgz#feda1c7f7617912732b29bf8cf26252a20b9eecd"
   dependencies:
-    mime-db ">= 1.24.0 < 2"
+    mime-db ">= 1.27.0 < 2"
 
 compression@^1.5.2:
   version "1.6.2"
@@ -1375,7 +1381,7 @@ cookies@~0.7.0:
 
 copy-to@^2.0.1:
   version "2.0.1"
-  resolved "http://10.40.189.154:7001/copy-to/download/copy-to-2.0.1.tgz#2680fbb8068a48d08656b6098092bdafc906f4a5"
+  resolved "http://registry.npm.taobao.org/copy-to/download/copy-to-2.0.1.tgz#2680fbb8068a48d08656b6098092bdafc906f4a5"
 
 core-js@^1.0.0:
   version "1.2.7"
@@ -2326,7 +2332,7 @@ indexof@0.0.1:
 
 inflation@^2.0.0:
   version "2.0.0"
-  resolved "http://10.40.189.154:7001/inflation/download/inflation-2.0.0.tgz#8b417e47c28f925a45133d914ca1fd389107f30f"
+  resolved "http://registry.npm.taobao.org/inflation/download/inflation-2.0.0.tgz#8b417e47c28f925a45133d914ca1fd389107f30f"
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -2549,13 +2555,13 @@ json-loader@^0.5.4:
 
 json-path@^0.1.3:
   version "0.1.3"
-  resolved "https://registry.yarnpkg.com/json-path/-/json-path-0.1.3.tgz#dce61357b3b281b28ac647ec0a709bc58a155bf8"
+  resolved "http://registry.npm.taobao.org/json-path/download/json-path-0.1.3.tgz#dce61357b3b281b28ac647ec0a709bc58a155bf8"
   dependencies:
     json-ptr "~0.1.1"
 
 json-ptr@~0.1.1:
   version "0.1.1"
-  resolved "https://registry.yarnpkg.com/json-ptr/-/json-ptr-0.1.1.tgz#bab82a31e292ce7af9e3fc7fd65acd1bbb9248e8"
+  resolved "http://registry.npm.taobao.org/json-ptr/download/json-ptr-0.1.1.tgz#bab82a31e292ce7af9e3fc7fd65acd1bbb9248e8"
 
 json-schema@0.2.3:
   version "0.2.3"
@@ -2614,7 +2620,7 @@ kind-of@^3.0.2:
 
 koa-bodyparser@^4.2.0:
   version "4.2.0"
-  resolved "http://10.40.189.154:7001/koa-bodyparser/download/koa-bodyparser-4.2.0.tgz#bce6e08bc65f8709b6d1faa9411c7f0d8938aa54"
+  resolved "http://registry.npm.taobao.org/koa-bodyparser/download/koa-bodyparser-4.2.0.tgz#bce6e08bc65f8709b6d1faa9411c7f0d8938aa54"
   dependencies:
     co-body "^5.1.0"
     copy-to "^2.0.1"
@@ -2657,7 +2663,7 @@ koa-router@next:
 
 koa-validate@^1.0.7:
   version "1.0.7"
-  resolved "https://registry.yarnpkg.com/koa-validate/-/koa-validate-1.0.7.tgz#0b7dd3feee83cae1b4694fa06376477d945eb430"
+  resolved "http://registry.npm.taobao.org/koa-validate/download/koa-validate-1.0.7.tgz#0b7dd3feee83cae1b4694fa06376477d945eb430"
   dependencies:
     json-path "^0.1.3"
     validator "^5.2.0"
@@ -2808,7 +2814,7 @@ math-expression-evaluator@^1.2.14:
 
 meanie-mongoose-to-json@^1.2.1:
   version "1.2.1"
-  resolved "https://registry.yarnpkg.com/meanie-mongoose-to-json/-/meanie-mongoose-to-json-1.2.1.tgz#4063920478971ceef5c949b118bd415c1040be5d"
+  resolved "http://registry.npm.taobao.org/meanie-mongoose-to-json/download/meanie-mongoose-to-json-1.2.1.tgz#4063920478971ceef5c949b118bd415c1040be5d"
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -2854,15 +2860,15 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
-"mime-db@>= 1.24.0 < 2", mime-db@~1.26.0:
-  version "1.26.0"
-  resolved "http://registry.npm.taobao.org/mime-db/download/mime-db-1.26.0.tgz#eaffcd0e4fc6935cf8134da246e2e6c35305adff"
+"mime-db@>= 1.27.0 < 2", mime-db@~1.27.0:
+  version "1.27.0"
+  resolved "http://registry.npm.taobao.org/mime-db/download/mime-db-1.27.0.tgz#820f572296bbd20ec25ed55e5b5de869e5436eb1"
 
 mime-types@^2.0.7, mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.13, mime-types@~2.1.7:
-  version "2.1.14"
-  resolved "http://registry.npm.taobao.org/mime-types/download/mime-types-2.1.14.tgz#f7ef7d97583fcaf3b7d282b6f8b5679dab1e94ee"
+  version "2.1.15"
+  resolved "http://registry.npm.taobao.org/mime-types/download/mime-types-2.1.15.tgz#a4ebf5064094569237b8cf70046776d09fc92aed"
   dependencies:
-    mime-db "~1.26.0"
+    mime-db "~1.27.0"
 
 mime@1.3.4, mime@^1.2.11, mime@^1.3.4:
   version "1.3.4"
@@ -3737,7 +3743,7 @@ range-parser@^1.0.3, range-parser@~1.2.0:
 
 raw-body@^2.2.0:
   version "2.2.0"
-  resolved "http://10.40.189.154:7001/raw-body/download/raw-body-2.2.0.tgz#994976cf6a5096a41162840492f0bdc5d6e7fb96"
+  resolved "http://registry.npm.taobao.org/raw-body/download/raw-body-2.2.0.tgz#994976cf6a5096a41162840492f0bdc5d6e7fb96"
   dependencies:
     bytes "2.4.0"
     iconv-lite "0.4.15"
@@ -4509,7 +4515,7 @@ validate-npm-package-license@^3.0.1:
 
 validator@^5.2.0:
   version "5.7.0"
-  resolved "http://10.40.189.154:7001/validator/download/validator-5.7.0.tgz#7a87a58146b695ac486071141c0c49d67da05e5c"
+  resolved "http://registry.npm.taobao.org/validator/download/validator-5.7.0.tgz#7a87a58146b695ac486071141c0c49d67da05e5c"
 
 vary@^1.0.0, vary@~1.1.0:
   version "1.1.1"
