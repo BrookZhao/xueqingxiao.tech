@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const schemaConfig = require('./schemaConfig');
 
 const UserSchema = mongoose.Schema({
   avatarUrl: String,
@@ -11,6 +10,10 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-}, schemaConfig);
+}, {
+  versionKey: false,
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
+});
 
 module.exports = mongoose.model('User', UserSchema);

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-const schemaConfig = require('./schemaConfig');
 
-const ArticleSchema = mongoose.Schema({
+const StorySchema = mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -34,6 +33,10 @@ const ArticleSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-}, schemaConfig);
+}, {
+  versionKey: false,
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
+});
 
-module.exports = mongoose.model('Story', ArticleSchema);
+module.exports = mongoose.model('Story', StorySchema);

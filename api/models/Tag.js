@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
-const schemaConfig = require('./schemaConfig');
 
 const TagSchema = mongoose.Schema({
   name: String,
-}, schemaConfig);
+}, {
+  versionKey: false,
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
+});
 
 module.exports = mongoose.model('Tag', TagSchema);

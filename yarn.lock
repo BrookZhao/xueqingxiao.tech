@@ -163,15 +163,9 @@ async@1.5, async@^1.5, async@^1.5.2:
   version "1.5.2"
   resolved "http://registry.npm.taobao.org/async/download/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@2.1.4:
+async@2.1.4, async@^2.1.2:
   version "2.1.4"
   resolved "http://registry.npm.taobao.org/async/download/async-2.1.4.tgz#2d2160c7788032e4dd6cbe2502f1f9a2c8f6cde4"
-  dependencies:
-    lodash "^4.14.0"
-
-async@^2.1.2:
-  version "2.1.5"
-  resolved "http://registry.npm.taobao.org/async/download/async-2.1.5.tgz#e587c68580994ac67fc56ff86d3ac56bdbe810bc"
   dependencies:
     lodash "^4.14.0"
 
@@ -1583,6 +1577,13 @@ deep-extend@~0.4.0:
   version "0.4.1"
   resolved "http://registry.npm.taobao.org/deep-extend/download/deep-extend-0.4.1.tgz#efe4113d08085f4e6f9687759810f807469e2253"
 
+deep-rename-keys@^0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/deep-rename-keys/download/deep-rename-keys-0.2.0.tgz#dc2aa1a46de504fe3eaa828b1dc5b2c626c3b845"
+  dependencies:
+    kind-of "^3.0.2"
+    rename-keys "^1.1.2"
+
 defined@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/defined/download/defined-1.0.0.tgz#c98d9bcef75674188e110969151199e39b1fa693"
@@ -2934,7 +2935,7 @@ mongodb@2.2.25:
     mongodb-core "2.1.9"
     readable-stream "2.1.5"
 
-mongoose@^4.9.0:
+mongoose@^4.9.1:
   version "4.9.1"
   resolved "http://registry.npm.taobao.org/mongoose/download/mongoose-4.9.1.tgz#e621d9e7356f46d1e39980a71063857405fa9099"
   dependencies:
@@ -3911,6 +3912,10 @@ regjsparser@^0.1.4:
 relateurl@0.2.x:
   version "0.2.7"
   resolved "http://registry.npm.taobao.org/relateurl/download/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
+
+rename-keys@^1.1.2:
+  version "1.1.2"
+  resolved "http://registry.npm.taobao.org/rename-keys/download/rename-keys-1.1.2.tgz#dc95b161a99aa05d812a42ca4f8c5e1c9479e3aa"
 
 renderkid@^2.0.1:
   version "2.0.1"

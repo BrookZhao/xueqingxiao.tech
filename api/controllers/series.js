@@ -12,7 +12,7 @@ const add = async(ctx, next) => {
     logo: requestBody.logo,
   });
   try {
-    ctx.body = await series.save();
+    ctx.body = { series: await series.save() };
   } catch (error) {
     console.log('Can not save series: ', error);
   }
@@ -23,9 +23,7 @@ const remove = async(ctx, next) => {
   ctx.checkBody('id').notEmpty();
   const requestBody = ctx.request.body;
   try {
-    ctx.body = await Series.findByIdAndRemove({
-      _id: requestBody.id
-    });
+    ctx.body = { series: await Series.findByIdAndRemove({ _id: requestBody.id }) };
   } catch (error) {
     console.log(`Can not remove series by id ${requestBody.id}: `, error);
   }
@@ -41,8 +39,8 @@ const update = async(ctx, next) => {
   requestBody._id = requestBody.id;
   delete requestBody.id;
   try {
-    await Series.update(requestBody)
-    ctx.body = await Series.find(requestBody);
+    await Series.update({})
+    ctx.body = { series: await Series.findOne({ _id: requestBody.id }) };
   } catch (error) {
     console.log(`Can not update series ${JSON.stringify(requestBody)}: `, error);
   }
@@ -55,14 +53,7 @@ const getOne = async(ctx, next) => {
 };
 
 const getAll = async(ctx, next) => {
-  try {
-    const series = await Series.find({});
-    ctx.body = {
-      series,
-    };
-  } catch (error) {
-    console.log('Can not find series: ', error);
-  }
+  ctx.body = { series: await ctx.mongoose.getAll(Series, {}) };
   await next();
 };
 

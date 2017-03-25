@@ -8,6 +8,7 @@
   "dependencies": {
     "boom": "^4.3.0",
     "classnames": "^2.2.5",
+    "deep-rename-keys": "^0.2.0",
     "import-dir": "^0.0.1",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
@@ -16,7 +17,7 @@
     "koa-router": "next",
     "koa-validate": "^1.0.7",
     "meanie-mongoose-to-json": "^1.2.1",
-    "mongoose": "^4.9.0",
+    "mongoose": "^4.9.1",
     "normalize.css": "^5.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

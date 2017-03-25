@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const schemaConfig = require('./schemaConfig');
 
 const CommentSchema = mongoose.Schema({
   content: {
@@ -20,6 +19,10 @@ const CommentSchema = mongoose.Schema({
     ref: 'User',
     required: true
   }
-}, schemaConfig);
+}, {
+  versionKey: false,
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
+});
 
 module.exports = mongoose.model('Comment', CommentSchema);

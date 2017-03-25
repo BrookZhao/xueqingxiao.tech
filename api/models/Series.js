@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const schemaConfig = require('./schemaConfig');
 
 const SeriesSchema = mongoose.Schema({
   name: {
@@ -18,6 +17,10 @@ const SeriesSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Article',
   }],
-}, schemaConfig);
+}, {
+  versionKey: false,
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
+});
 
 module.exports = mongoose.model('Series', SeriesSchema);

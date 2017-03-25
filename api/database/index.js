@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.plugin(require('meanie-mongoose-to-json'));
 mongoose.Promise = global.Promise;
 
 const connect = (uri) => (new Promise((resolve, reject) => {

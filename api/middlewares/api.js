@@ -1,8 +1,6 @@
 module.exports = () => (ctx, next) => {
   next().then(() => {
-    let body = {
-      viewer: ctx.body || {}
-    };
+    let body = ctx.body || {};
     if (ctx.errors) {
       body = Object.assign(body, {
         success: false,
