@@ -1,4 +1,22 @@
 const renameKeys = require('deep-rename-keys');
+const { isArray, isObject } = require('lodash');
+
+const _idToId = key => (key === '_id' ? 'id' : key);
+const idTo_id = key => (key === 'id' ? '_id' : key);
+
+const processResult = result => {
+  if (isArray(result)) {
+    return renameKeys(result.map(value => (value.toObject())), _idToId);
+  }
+  if (isObject(result)) {
+    return renameKeys(result.toObject(), _idToId);
+  }
+  return null;
+};
+
+const processParams = params => {
+  return renameKeys(params, idTo_id);
+};
 
 const addOne = (Collection, params) => {
   return new Promise((resolve, reject) => {
@@ -13,24 +31,59 @@ const addOne = (Collection, params) => {
   });
 };
 
-const deleteOne = () => {
-
+const deleteOne = (Collection, params) => {
+  return new Promise((resolve, reject) => {
+    Collection.findByIdAndRemove(processParams(params))
+      .then(result => {
+        resolve(processResult(result));
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
 };
 
-const udpateOne = () => {
-
+const updateOne = (Collection, params) => {
+  params = processParams(params);
+  return new Promise((resolve, reject) => {
+    Collection.update(params)
+      .then(result => {
+        if (result.ok) {
+          Collection.findById(params._id)
+            .then(res => {
+              resolve(processResult(res));
+            })
+            .catch(error => {
+              reject(error);
+            });
+          return;
+        }
+        resolve(null);
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
 };
 
-const getOne = () => {
-
+const getOne = (Collection, params) => {
+  params = processParams(params);
+  return new Promise((resolve, reject) => {
+    Collection.findById(params._id)
+      .then(result => {
+        resolve(processResult(result));
+      })
+      .catch(error => {
+        reject(error);
+      });
+  });
 };
 
 const getAll = (Collection, params) => {
   return new Promise((resolve, reject) => {
     Collection.find(params)
       .then(result => {
-        resolve(renameKeys(result.map(value => (value.toObject())),
-          key => (key === '_id' ? 'id' : key)));
+        resolve(processResult(result));
       })
       .catch(error => {
         reject(error);
@@ -40,7 +93,7 @@ const getAll = (Collection, params) => {
 
 const getAllWithPagination = () => {
 
-}
+};
 
 module.exports = (app) => {
   if (app.context.mongoose) {
@@ -49,7 +102,7 @@ module.exports = (app) => {
   app.context.mongoose = {
     addOne,
     deleteOne,
-    udpateOne,
+    updateOne,
     getOne,
     getAll,
     getAllWithPagination,
