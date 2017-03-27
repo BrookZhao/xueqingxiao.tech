@@ -1,41 +1,38 @@
 const Navigation = require('../models/Navigation');
 
-const add = async (ctx, next) => {
+const add = async(ctx, next) => {
   ctx.checkBody('name').notEmpty();
   ctx.checkBody('link').notEmpty();
+  ctx.body = { navigation: await ctx.mongoose.addOne(Navigation, ctx.request.body) };
   await next();
 };
 
-const remove = async (ctx, next) => {
+const remove = async(ctx, next) => {
   ctx.checkBody('id').notEmpty();
   ctx.checkBody('name').optional().notEmpty();
   ctx.checkBody('link').optional().notEmpty();
+  ctx.body = { navigation: await ctx.mongoose.deleteOne(Navigation, ctx.request.body) };
   await next();
 };
 
-const update = async (ctx, next) => {
+const update = async(ctx, next) => {
   ctx.checkBody('id').notEmpty();
   ctx.checkBody('name').optional().notEmpty();
   ctx.checkBody('link').optional().notEmpty();
+  ctx.body = { navigation: await ctx.mongoose.updateOne(Navigation, ctx.request.body) };
   await next();
 };
 
-const getOne = async (ctx, next) => {
-  ctx.checkQuery('id').notEmpty();
-  ctx.checkQuery('name').optional().notEmpty();
-  ctx.checkQuery('link').optional().notEmpty();
+const getOne = async(ctx, next) => {
+  ctx.checkParams('id').notEmpty();
   const navigation = await Navigation.findOne({});
-  ctx.body = {
-    navigation,
-  };
+  ctx.body = { navigation: await ctx.mongoose.getOne(Navigation, ctx.params) };
   await next();
 };
 
-const getAll = async (ctx, next) => {
+const getAll = async(ctx, next) => {
   const navigations = await Navigation.find({});
-  ctx.body = {
-    navigations
-  };
+  ctx.body = { navigations: await ctx.mongoose.getAll(Navigation, ctx.query) };
   await next();
 };
 
