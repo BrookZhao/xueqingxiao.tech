@@ -17,6 +17,11 @@ const StorySchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Tag',
   }],
+  series: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Series',
+    required: true,
+  },
   likes: {
     type: Number,
     default: 0
