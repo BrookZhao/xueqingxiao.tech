@@ -43,10 +43,10 @@ const deleteOne = (Collection, params) => {
   });
 };
 
-const updateOne = (Collection, params) => {
+const updateOne = (Collection, params, args) => {
   params = processParams(params);
   return new Promise((resolve, reject) => {
-    Collection.update(params)
+    Collection.update(Object.assign(params, args))
       .then(result => {
         if (result.ok) {
           Collection.findById(params._id)
