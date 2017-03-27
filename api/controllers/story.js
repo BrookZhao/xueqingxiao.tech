@@ -5,7 +5,12 @@ const add = async(ctx, next) => {
   ctx.checkBody('title').notEmpty();
   ctx.checkBody('author').notEmpty();
   ctx.checkBody('content').notEmpty();
-  ctx.body = { story: await ctx.mongoose.addOne(Story, Object.assign(ctx.query, ctx.request.body)) };
+  ctx.body = {
+    story: await ctx.mongoose.addOne(
+      Story,
+      Object.assign(ctx.query, ctx.request.body)
+    ),
+  };
   await next();
 };
 
