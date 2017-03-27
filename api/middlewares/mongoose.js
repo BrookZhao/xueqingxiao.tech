@@ -1,5 +1,6 @@
 const renameKeys = require('deep-rename-keys');
-const { isArray, isObject } = require('lodash');
+const { isArray, isObject, lowerCase } = require('lodash');
+const pluralize = require('pluralize');
 
 const _idToId = key => (key === '_id' ? 'id' : key);
 const idTo_id = key => (key === 'id' ? '_id' : key);
@@ -23,22 +24,37 @@ const addOne = (Collection, params) => {
     const instance = new Collection(params);
     instance.save()
       .then((result) => {
-        resolve(processResult(result));
+        resolve({
+          success: true,
+          message: `${Collection.modelName} has been added.`,
+          [lowerCase(Collection.modelName)]: processResult(result),
+        });
       })
       .catch((error) => {
-        reject(error);
+        resolve({
+          success: false,
+          message: error.message,
+          errors: errors,
+        });
       });
   });
 };
 
 const deleteOne = (Collection, params) => {
   return new Promise((resolve, reject) => {
-    Collection.findByIdAndRemove(processParams(params))
+    Collection.remove(processParams(params))
       .then(result => {
-        resolve(processResult(result));
+        resolve({
+          success: true,
+          message: `${Collection.modelName} has been deleted.`,
+        });
       })
       .catch(error => {
-        reject(error);
+        resolve({
+          success: false,
+          message: error.message,
+          errors: errors,
+        });
       });
   });
 };
@@ -51,17 +67,29 @@ const updateOne = (Collection, params, args) => {
         if (result.ok) {
           Collection.findById(params._id)
             .then(res => {
-              resolve(processResult(res));
+              resolve({
+                success: true,
+                message: `${Collection.modelName} has been updated.`,
+                [lowerCase(Collection.modelName)]: processResult(result),
+              });
             })
             .catch(error => {
-              reject(error);
+              resolve({
+                success: false,
+                message: error.message,
+                errors: errors,
+              });
             });
           return;
         }
         resolve(null);
       })
       .catch(error => {
-        reject(error);
+        resolve({
+          success: false,
+          message: error.message,
+          errors: errors,
+        });
       });
   });
 };
@@ -71,10 +99,17 @@ const getOne = (Collection, params) => {
   return new Promise((resolve, reject) => {
     Collection.findById(params._id)
       .then(result => {
-        resolve(processResult(result));
+        resolve({
+          success: true,
+          [lowerCase(Collection.modelName)]: processResult(result),
+        });
       })
       .catch(error => {
-        reject(error);
+        resolve({
+          success: false,
+          message: error.message,
+          errors: errors,
+        });
       });
   });
 };
@@ -83,10 +118,17 @@ const getAll = (Collection, params) => {
   return new Promise((resolve, reject) => {
     Collection.find(params)
       .then(result => {
-        resolve(processResult(result));
+        resolve({
+          success: true,
+          [pluralize(lowerCase(Collection.modelName))]: processResult(result),
+        });
       })
       .catch(error => {
-        reject(error);
+        resolve({
+          success: false,
+          message: error.message,
+          errors: errors,
+        });
       });
   });
 };
