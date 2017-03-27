@@ -3,8 +3,7 @@ const { isArray, isObject, lowerCase } = require('lodash');
 const pluralize = require('pluralize');
 
 const processResult = result =>
-  // renameKeys(JSON.parse(JSON.stringify(result)), key => (key === '_id' ? 'id' : key));
-  JSON.parse(JSON.stringify(result));
+  renameKeys(JSON.parse(JSON.stringify(result)), key => (key === '_id' ? 'id' : key));
 
 const processParams = params =>
   renameKeys(params, key => (key === 'id' ? '_id' : key));
