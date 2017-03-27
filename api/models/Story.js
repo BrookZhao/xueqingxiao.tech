@@ -25,7 +25,7 @@ const StorySchema = mongoose.Schema({
     type: Number,
     default: 0
   },
-  updated: {
+  updatedAt: {
     type: Date,
     default: Date.now
   },

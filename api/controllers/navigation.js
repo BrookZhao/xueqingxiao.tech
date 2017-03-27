@@ -9,8 +9,6 @@ const add = async (ctx, next) => {
 
 const remove = async (ctx, next) => {
   ctx.checkBody('id').notEmpty();
-  ctx.checkBody('name').optional().notEmpty();
-  ctx.checkBody('link').optional().notEmpty();
   ctx.body = { navigation: await ctx.mongoose.deleteOne(Navigation, ctx.request.body) };
   await next();
 };
