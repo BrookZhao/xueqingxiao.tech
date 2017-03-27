@@ -2,22 +2,12 @@ const renameKeys = require('deep-rename-keys');
 const { isArray, isObject, lowerCase } = require('lodash');
 const pluralize = require('pluralize');
 
-const _idToId = key => (key === '_id' ? 'id' : key);
-const idTo_id = key => (key === 'id' ? '_id' : key);
+const processResult = result =>
+  // renameKeys(JSON.parse(JSON.stringify(result)), key => (key === '_id' ? 'id' : key));
+  JSON.parse(JSON.stringify(result));
 
-const processResult = result => {
-  if (isArray(result)) {
-    return renameKeys(result.map(value => (value.toObject())), _idToId);
-  }
-  if (isObject(result)) {
-    return renameKeys(result.toObject(), _idToId);
-  }
-  return null;
-};
-
-const processParams = params => {
-  return renameKeys(params, idTo_id);
-};
+const processParams = params =>
+  renameKeys(params, key => (key === 'id' ? '_id' : key));
 
 const addOne = (Collection, params) => {
   return new Promise((resolve, reject) => {
@@ -34,7 +24,7 @@ const addOne = (Collection, params) => {
         resolve({
           success: false,
           message: error.message,
-          errors: errors,
+          errors: error.errors,
         });
       });
   });
@@ -42,7 +32,7 @@ const addOne = (Collection, params) => {
 
 const deleteOne = (Collection, params) => {
   return new Promise((resolve, reject) => {
-    Collection.remove(processParams(params))
+    Collection.findByIdAndRemove(processParams(params))
       .then(result => {
         resolve({
           success: true,
@@ -53,7 +43,7 @@ const deleteOne = (Collection, params) => {
         resolve({
           success: false,
           message: error.message,
-          errors: errors,
+          errors: error.errors,
         });
       });
   });
@@ -63,10 +53,10 @@ const updateOne = (Collection, params, args) => {
   params = processParams(params);
   return new Promise((resolve, reject) => {
     Collection.update(Object.assign(params, args))
-      .then(result => {
-        if (result.ok) {
-          Collection.findById(params._id)
-            .then(res => {
+      .then(({ ok }) => {
+        if (ok) {
+          Collection.findById(params)
+            .then(result => {
               resolve({
                 success: true,
                 message: `${Collection.modelName} has been updated.`,
@@ -77,7 +67,7 @@ const updateOne = (Collection, params, args) => {
               resolve({
                 success: false,
                 message: error.message,
-                errors: errors,
+                errors: error.errors,
               });
             });
           return;
@@ -88,7 +78,7 @@ const updateOne = (Collection, params, args) => {
         resolve({
           success: false,
           message: error.message,
-          errors: errors,
+          errors: error.errors,
         });
       });
   });
@@ -108,7 +98,7 @@ const getOne = (Collection, params) => {
         resolve({
           success: false,
           message: error.message,
-          errors: errors,
+          errors: error.errors,
         });
       });
   });
@@ -127,7 +117,7 @@ const getAll = (Collection, params) => {
         resolve({
           success: false,
           message: error.message,
-          errors: errors,
+          errors: error.errors,
         });
       });
   });
@@ -148,5 +138,6 @@ module.exports = (app) => {
     getOne,
     getAll,
     getAllWithPagination,
+    processParams,
   };
 };

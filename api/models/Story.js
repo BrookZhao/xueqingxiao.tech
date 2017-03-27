@@ -41,7 +41,7 @@ const StorySchema = mongoose.Schema({
 }, {
   versionKey: false,
   toJSON: { virtuals: true },
-  toObject: { virtuals: true }
+  toObject: { getters: true, virtuals: true }
 });
 
 module.exports = mongoose.model('Story', StorySchema);
