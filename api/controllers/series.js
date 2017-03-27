@@ -6,7 +6,7 @@ const add = async(ctx, next) => {
   ctx.checkBody('description').notEmpty();
   ctx.checkBody('logo').notEmpty();
   if (ctx.errors) {
-    ctx.body = getErrorPaylod(Navigation, ctx.errors);
+    ctx.body = getErrorPaylod(Series, ctx.errors);
     return;
   }
   ctx.body = await ctx.mongoose.addOne(Series, ctx.request.body);
@@ -16,7 +16,7 @@ const add = async(ctx, next) => {
 const remove = async(ctx, next) => {
   ctx.checkParams('id').notEmpty();
   if (ctx.errors) {
-    ctx.body = getErrorPaylod(Navigation, ctx.errors);
+    ctx.body = getErrorPaylod(Series, ctx.errors);
     return;
   }
   ctx.body = await ctx.mongoose.deleteOne(Series, ctx.params);
@@ -29,7 +29,7 @@ const update = async(ctx, next) => {
   ctx.checkBody('description').optional().notEmpty();
   ctx.checkBody('logo').optional().notEmpty();
   if (ctx.errors) {
-    ctx.body = getErrorPaylod(Navigation, ctx.errors);
+    ctx.body = getErrorPaylod(Series, ctx.errors);
     return;
   }
   ctx.body = await ctx.mongoose.updateOne(Series, ctx.params, ctx.request.body);
@@ -39,7 +39,7 @@ const update = async(ctx, next) => {
 const getOne = async(ctx, next) => {
   ctx.checkParams('id').notEmpty();
   if (ctx.errors) {
-    ctx.body = getErrorPaylod(Navigation, ctx.errors);
+    ctx.body = getErrorPaylod(Series, ctx.errors);
     return;
   }
   ctx.body = await ctx.mongoose.getOne(Series, ctx.params);
@@ -48,7 +48,7 @@ const getOne = async(ctx, next) => {
 
 const getAll = async(ctx, next) => {
   if (ctx.errors) {
-    ctx.body = getErrorPaylod(Navigation, ctx.errors);
+    ctx.body = getErrorPaylod(Series, ctx.errors);
     return;
   }
   ctx.body = await ctx.mongoose.getAll(Series, {});
